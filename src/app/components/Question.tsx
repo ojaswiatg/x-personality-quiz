@@ -33,11 +33,14 @@ export default function Question({ question, onClickNext }: TQuestionProps) {
                                     id={question.id + option.id}
                                     name={question.question}
                                     type="radio"
-                                    className="radio mt-2"
+                                    className="radio mt-1"
                                     value={index}
                                     onChange={(event) => onOptionChange(event)}
                                 />
-                                <label className="prose-lg whitespace-normal">
+                                <label
+                                    htmlFor={question.id + option.id}
+                                    className="prose-lg whitespace-normal"
+                                >
                                     {option.option}
                                 </label>
                             </div>
