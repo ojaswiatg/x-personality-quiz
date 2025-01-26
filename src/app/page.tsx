@@ -29,7 +29,7 @@ export default function Home() {
                     onClickAgain={() => setCurrentQuestionIndex(-1)}
                 />
             ) : (
-                <div className="main p-8 mt-8 flex flex-col gap-4">
+                <div className="main p-8 flex flex-col gap-4">
                     <p className="prose-lg font-bold">Question {currentQuestionIndex + 1}/10</p>
                     <progress
                         className="progress progress-primary"
