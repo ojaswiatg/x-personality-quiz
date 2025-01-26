@@ -2,7 +2,7 @@ type TFinishProps = {
     totalPoints: number;
 };
 
-export default function TFinishProps({ totalPoints }: TFinishProps) {
+export default function Finish({ totalPoints }: TFinishProps) {
     return (
         <div className="my-auto min-h-screen min-w-screen flex flex-col items-center pt-32 gap-16">
             <div className="flex flex-col items-center gap-4">
