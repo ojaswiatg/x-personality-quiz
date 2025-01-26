@@ -12,10 +12,6 @@ export default function Home() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1);
     const [totalPoints, setTotalPoints] = useState(0);
 
-    const onClickStart = () => {
-        setCurrentQuestionIndex(0);
-    };
-
     const onClickNext = (option: TOption) => {
         if (currentQuestionIndex < questions.length) {
             setTotalPoints((prev) => prev + option.points);
@@ -26,12 +22,15 @@ export default function Home() {
     return (
         <div>
             {currentQuestionIndex === -1 ? (
-                <Start onClickStart={onClickStart} />
+                <Start onClickStart={() => setCurrentQuestionIndex(0)} />
             ) : currentQuestionIndex >= questions.length ? (
-                <Finish totalPoints={totalPoints} />
+                <Finish
+                    totalPoints={totalPoints}
+                    onClickAgain={() => setCurrentQuestionIndex(-1)}
+                />
             ) : (
                 <div className="main p-8 mt-8 flex flex-col gap-4">
-                    <p className="prose-2xl font-bold">Question {currentQuestionIndex + 1}/10</p>
+                    <p className="prose-lg font-bold">Question {currentQuestionIndex + 1}/10</p>
                     <progress
                         className="progress progress-primary"
                         value={currentQuestionIndex + 1}

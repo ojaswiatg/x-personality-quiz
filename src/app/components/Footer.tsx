@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <p className="prose-sm whitespace-normal text-center px-8 absolute bottom-16">
+        <p className="prose-sm whitespace-normal text-center px-8 absolute bottom-8">
             Created with ♥️ by{" "}
             <a target="blank" href="http://twtr.openinapp.co/cnqzb" className="underline">
                 @arxhique on X

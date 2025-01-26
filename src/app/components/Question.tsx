@@ -22,9 +22,9 @@ export default function Question({ question, onClickNext }: TQuestionProps) {
 
     return (
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <p className="prose-xl font-bold whitespace-normal">{question.question}</p>
+            <p className="prose-md font-bold whitespace-normal">{question.question}</p>
 
-            <div className="flex flex-col gap-4 h-76">
+            <div className="flex flex-col gap-4">
                 {question.options.map((option, index) => {
                     {
                         return (
@@ -33,13 +33,13 @@ export default function Question({ question, onClickNext }: TQuestionProps) {
                                     id={question.id + option.id}
                                     name={question.question}
                                     type="radio"
-                                    className="radio mt-1"
+                                    className="radio"
                                     value={index}
                                     onChange={(event) => onOptionChange(event)}
                                 />
                                 <label
                                     htmlFor={question.id + option.id}
-                                    className="prose-lg whitespace-normal"
+                                    className="prose-sm whitespace-normal"
                                 >
                                     {option.option}
                                 </label>
