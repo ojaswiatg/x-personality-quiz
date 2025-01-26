@@ -274,3 +274,5 @@ export const QUESTIONS: TQuestion[] = [
         ],
     },
 ];
+
+export const ADMIN_LINK = "http://twtr.openinapp.co/cnqzb";

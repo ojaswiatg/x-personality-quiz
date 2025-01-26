@@ -1,3 +1,5 @@
+import { ADMIN_LINK } from "../constants";
+
 type TFinishProps = {
     totalPoints: number;
     onClickAgain: () => void;
@@ -24,7 +26,7 @@ export default function Finish({ totalPoints, onClickAgain }: TFinishProps) {
                 </button>
             </div>
             <p className="prose-md">
-                <a target="blank" href="http://twtr.openinapp.co/cnqzb" className="underline">
+                <a target="blank" href={ADMIN_LINK} className="underline">
                     Follow @arxhique on X for more!
                 </a>
             </p>
