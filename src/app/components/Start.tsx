@@ -6,7 +6,7 @@ type TStartProps = {
 
 export default function Start({ onClickStart }: TStartProps) {
     return (
-        <div className="my-auto min-h-screen min-w-screen flex flex-col items-center mt-16 gap-12 px-16">
+        <div className="flex flex-col items-center mt-16 gap-12 px-16">
             <p className="prose-md whitespace-normal text-center">
                 This quiz will determine how much gay you are!
             </p>
