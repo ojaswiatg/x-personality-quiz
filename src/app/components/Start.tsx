@@ -15,7 +15,7 @@ export default function Start({ onClickStart }: TStartProps) {
             </button>
             <p className="prose-sm text-gray-400 whitespace-normal text-center">
                 Disclaimer: This is just a test made for fun and does not determine your actual
-                sexuality. Do not bully others based on the results. Have fun!
+                personality. Do not bully others based on the results. Have fun!
             </p>
             <p className="prose-sm text-gray-400 whitespace-normal text-center">
                 I do not collect any data. However, I encourage you to checkout{" "}
