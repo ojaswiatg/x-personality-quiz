@@ -1,7 +1,16 @@
+export type TPersonality =
+    | "Rabbit"
+    | "Monkey"
+    | "Sloth"
+    | "Wolf"
+    | "Elephant"
+    | "Dolphin"
+    | "Butterfly";
+
 export type TOption = {
     id: string;
     option: string;
-    points: number;
+    personalities: TPersonality[];
 };
 
 export type TQuestion = {
@@ -10,266 +19,264 @@ export type TQuestion = {
     options: TOption[];
 };
 
-export const MAX_GAY_POINTS = 100;
-
 export const QUESTIONS: TQuestion[] = [
     {
-        id: "question_1",
-        question: "How do you feel about glitter? ✨",
+        id: "1",
+        question: "What’s your ideal weekend activity? 🌞🐾",
         options: [
             {
-                id: "option_1",
-                option: "It’s a lifestyle, I’m obsessed! 🌟",
-                points: 10,
+                id: "A",
+                option: "Binge-watching a series and cuddling up in bed 📺",
+                personalities: ["Sloth", "Wolf"],
             },
             {
-                id: "option_2",
-                option: "It’s cute, but I’ll pass. 🏃‍♂️",
-                points: 2,
+                id: "B",
+                option: "Going for a long hike in the mountains 🏞️",
+                personalities: ["Wolf", "Elephant"],
             },
             {
-                id: "option_3",
-                option: "Eh, not my thing. 😅",
-                points: 0,
+                id: "C",
+                option: "Trying new foods at a street market 🍣",
+                personalities: ["Monkey", "Rabbit", "Butterfly"],
             },
             {
-                id: "option_4",
-                option: "I accidentally swallowed some once… never again. 🙈",
-                points: 3,
+                id: "D",
+                option: "Spending time at the beach with friends 🏖️",
+                personalities: ["Dolphin", "Monkey", "Butterfly"],
             },
         ],
     },
     {
-        id: "question_2",
-        question: "If you were to pick a dance move for a Friday night, what are you doing? 💃",
+        id: "2",
+        question: "How do you handle stress? 😤🧘",
         options: [
             {
-                id: "option_1",
-                option: "The moonwalk, all the way. 🌙",
-                points: 5,
+                id: "A",
+                option: "I take a nap and escape into my dreams 😴",
+                personalities: ["Sloth", "Elephant"],
             },
             {
-                id: "option_2",
-                option: "A chill little two-step. 💃",
-                points: 2,
+                id: "B",
+                option: "I go for a walk and clear my mind 🦋",
+                personalities: ["Butterfly", "Rabbit"],
             },
             {
-                id: "option_3",
-                option: "I’m not much of a dancer, more of a wallflower. 🌸",
-                points: 0,
+                id: "C",
+                option: "I dive into a hobby or a creative activity 🎨",
+                personalities: ["Monkey", "Rabbit", "Dolphin", "Elephant"],
             },
             {
-                id: "option_4",
-                option: "I’ll just vibe to the beat with some shoulder shimmy. ✨",
-                points: 10,
+                id: "D",
+                option: "I face it head-on and power through 💪",
+                personalities: ["Wolf", "Elephant"],
             },
         ],
     },
     {
-        id: "question_3",
-        question: "Which vacation destination sounds like your kind of paradise? 🏖️",
+        id: "3",
+        question: "How would your friends describe you? 🐯💬",
         options: [
             {
-                id: "option_1",
-                option: "A fabulous beach resort, with cocktails in hand! 🍹",
-                points: 3,
+                id: "A",
+                option: "The loyal and dependable one 🐕",
+                personalities: ["Elephant", "Wolf"],
             },
             {
-                id: "option_2",
-                option: "A cozy cabin, surrounded by trees and calm. 🌲",
-                points: 0,
+                id: "B",
+                option: "The playful and adventurous spirit 🦁",
+                personalities: ["Monkey", "Dolphin", "Butterfly"],
             },
             {
-                id: "option_3",
-                option: "A big city full of culture and food! 🏙️",
-                points: 5,
+                id: "C",
+                option: "The quiet thinker 🦉",
+                personalities: ["Elephant", "Wolf"],
             },
             {
-                id: "option_4",
-                option: "A secret rooftop party in the middle of nowhere. 🎉",
-                points: 10,
+                id: "D",
+                option: "The life of the party 🦄",
+                personalities: ["Monkey", "Butterfly", "Dolphin"],
             },
         ],
     },
     {
-        id: "question_4",
-        question: "Pick a movie genre to binge-watch all weekend. 🎬",
+        id: "4",
+        question: "What’s your go-to snack? 🍫🐍",
         options: [
             {
-                id: "option_1",
-                option: "Rom-coms with a side of cheese. 🧀",
-                points: 10,
+                id: "A",
+                option: "Chips and salsa 🧀",
+                personalities: ["Monkey", "Dolphin", "Rabbit"],
             },
             {
-                id: "option_2",
-                option: "Action-packed blockbusters! 💥",
-                points: 3,
+                id: "B",
+                option: "Fresh fruits and nuts 🍇🥜",
+                personalities: ["Rabbit", "Elephant", "Sloth"],
             },
             {
-                id: "option_3",
-                option: "Documentary or indie vibes! 🎥",
-                points: 0,
+                id: "C",
+                option: "Chocolate or candy 🍬",
+                personalities: ["Sloth", "Butterfly", "Rabbit"],
             },
             {
-                id: "option_4",
-                option: "Horror—gotta keep it spooky. 👻",
-                points: 5,
+                id: "D",
+                option: "A hearty sandwich or burger 🍔",
+                personalities: ["Wolf", "Elephant"],
             },
         ],
     },
     {
-        id: "question_5",
-        question: "If you were a dessert, which one would you be? 🧁",
+        id: "5",
+        question: "How do you approach a new challenge? 🧗‍♀️🐅",
         options: [
             {
-                id: "option_1",
-                option: "A rainbow cake with lots of sprinkles! 🌈",
-                points: 10,
+                id: "A",
+                option: "I take my time and plan carefully 🦊",
+                personalities: ["Rabbit", "Elephant", "Wolf"],
             },
             {
-                id: "option_2",
-                option: "A dark chocolate truffle—rich and mysterious. 🍫",
-                points: 0,
+                id: "B",
+                option: "I jump right in and learn as I go 🐅",
+                personalities: ["Monkey", "Butterfly", "Wolf"],
             },
             {
-                id: "option_3",
-                option: "A fresh fruit tart, light and refreshing. 🍓",
-                points: 3,
+                id: "C",
+                option: "I work with others to tackle it as a team 🐺",
+                personalities: ["Elephant", "Dolphin", "Butterfly"],
             },
             {
-                id: "option_4",
-                option: "A doughnut with extra sprinkles on top. 🍩",
-                points: 5,
+                id: "D",
+                option: "I rely on my instincts and go for it 🦁",
+                personalities: ["Dolphin", "Monkey", "Wolf"],
             },
         ],
     },
     {
-        id: "question_6",
-        question: "How do you feel about getting a mani-pedi? 💅",
+        id: "6",
+        question: "What’s your ideal pet? 🐶🐱",
         options: [
             {
-                id: "option_1",
-                option: "Yes please, I love a good mani-pedi day! 💅",
-                points: 10,
+                id: "A",
+                option: "A playful dog that loves to run 🐕",
+                personalities: ["Wolf", "Monkey"],
             },
             {
-                id: "option_2",
-                option: "Maybe once in a while, if I’m in the mood. 💁‍♂️",
-                points: 3,
+                id: "B",
+                option: "A lazy cat who enjoys lounging around 🐈",
+                personalities: ["Sloth", "Elephant"],
             },
             {
-                id: "option_3",
-                option: "Nah, not really my thing. 🚶‍♂️",
-                points: 0,
+                id: "C",
+                option: "A clever parrot that can talk 🦜",
+                personalities: ["Monkey", "Butterfly", "Dolphin"],
             },
             {
-                id: "option_4",
-                option: "I can’t sit still for that long. 🙃",
-                points: 8,
+                id: "D",
+                option: "A small, low-maintenance hamster 🐹",
+                personalities: ["Sloth", "Wolf", "Monkey"],
             },
         ],
     },
     {
-        id: "question_7",
-        question: "Pick your perfect pizza topping combo! 🍕",
+        id: "7",
+        question: "Which of these animals would you choose as your spirit animal? 🌟🐾",
         options: [
             {
-                id: "option_1",
-                option: "Pineapple and extra cheese (controversial, I know)! 🍍🧀",
-                points: 5,
+                id: "A",
+                option: "A playful dolphin 🌊",
+                personalities: ["Dolphin", "Monkey", "Butterfly"],
             },
             {
-                id: "option_2",
-                option: "Classic pepperoni, please! 🍕",
-                points: 0,
+                id: "B",
+                option: "A wise elephant 🐘",
+                personalities: ["Elephant", "Wolf"],
             },
             {
-                id: "option_3",
-                option: "Veggies, all the veggies. 🥬",
-                points: 0,
+                id: "C",
+                option: "A gentle rabbit 🐇",
+                personalities: ["Rabbit", "Butterfly"],
             },
             {
-                id: "option_4",
-                option: "Literally anything, the weirder the better! 🍄",
-                points: 10,
+                id: "D",
+                option: "A free-spirited butterfly 🦋",
+                personalities: ["Butterfly", "Monkey", "Dolphin"],
             },
         ],
     },
     {
-        id: "question_8",
-        question: "How do you feel about bold colors in your wardrobe? 🎨",
+        id: "8",
+        question: "What kind of weather makes you feel most alive? 🌤️🌧️",
         options: [
             {
-                id: "option_1",
-                option: "Bright and bold? Yes, please! 🌈",
-                points: 10,
+                id: "A",
+                option: "Bright and sunny days 🌞",
+                personalities: ["Dolphin", "Butterfly"],
             },
             {
-                id: "option_2",
-                option: "I like to add pops of color here and there. 🌸",
-                points: 5,
+                id: "B",
+                option: "Cloudy and cool days 🌥️",
+                personalities: ["Sloth", "Rabbit"],
             },
             {
-                id: "option_3",
-                option: "I’m more of a neutral tones kinda person. 🤍",
-                points: 0,
+                id: "C",
+                option: "Rainy and cozy days 🌧️",
+                personalities: ["Elephant", "Wolf"],
             },
             {
-                id: "option_4",
-                option: "I only wear black... is that okay? 😅",
-                points: 2,
+                id: "D",
+                option: "Misty and mysterious mornings 🌫️",
+                personalities: ["Monkey", "Dolphin"],
             },
         ],
     },
     {
-        id: "question_9",
-        question: "You walk into a room full of unicorns 🦄. What do you do?",
+        id: "9",
+        question: "Which of these sounds most like you? 🎵🐾",
         options: [
             {
-                id: "option_1",
-                option: "I’m in awe, can’t stop staring at their magic! ✨",
-                points: 10,
+                id: "A",
+                option: "A peaceful forest, full of quiet rustling leaves 🍃",
+                personalities: ["Rabbit", "Sloth", "Butterfly"],
             },
             {
-                id: "option_2",
-                option: "I’d make a new unicorn friend, obviously! 🦄💖",
-                points: 8,
+                id: "B",
+                option: "A bustling city, always alive with energy 🏙️",
+                personalities: ["Monkey", "Wolf", "Rabbit"],
             },
             {
-                id: "option_3",
-                option: "I’d try to blend in with the unicorns... 🦄",
-                points: 5,
+                id: "C",
+                option: "A calm river, flowing gently through the landscape 🌊",
+                personalities: ["Dolphin", "Elephant", "Sloth"],
             },
             {
-                id: "option_4",
-                option: "I’d leave, I’m not sure how to handle that level of fabulous. 😆",
-                points: 0,
+                id: "D",
+                option: "A tropical jungle, full of wild surprises 🌴",
+                personalities: ["Monkey", "Butterfly", "Wolf"],
             },
         ],
     },
     {
-        id: "question_10",
-        question: "Which of these sound like your dream Saturday? 💫",
+        id: "10",
+        question: "What’s your idea of a perfect vacation? 🏖️✈️",
         options: [
             {
-                id: "option_1",
-                option: "A fabulous brunch with friends and mimosas! 🍳🥂",
-                points: 10,
+                id: "A",
+                option: "Relaxing at a cozy cabin in the mountains 🏔️",
+                personalities: ["Elephant", "Sloth"],
             },
             {
-                id: "option_2",
-                option: "A chill afternoon reading a book or watching a show. 📚",
-                points: 5,
+                id: "B",
+                option: "Exploring a lively city and trying new things 🏙️",
+                personalities: ["Monkey", "Dolphin"],
             },
             {
-                id: "option_3",
-                option: "A spontaneous adventure to somewhere new! 🌍",
-                points: 0,
+                id: "C",
+                option: "Visiting tropical beaches and soaking up the sun 🏖️",
+                personalities: ["Dolphin", "Butterfly"],
             },
             {
-                id: "option_4",
-                option: "A quiet day in, listening to music and sipping tea. 🍵",
-                points: 2,
+                id: "D",
+                option: "Camping in the wild and embracing nature 🌲",
+                personalities: ["Wolf", "Rabbit"],
             },
         ],
     },

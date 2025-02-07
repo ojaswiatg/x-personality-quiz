@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "X Gay Quiz",
+    title: "X Personality Quiz",
     description: "Created by Arsh",
 };
 
@@ -24,8 +24,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html data-theme="sunset" lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <html data-theme="dim" lang="en">
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
+            >
                 {children}
                 <Footer />
             </body>

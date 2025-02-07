@@ -11,6 +11,6 @@ export default {
     theme: {},
     plugins: [daisyui, typography],
     daisyui: {
-        themes: ["sunset"],
+        themes: ["dim"],
     },
 } satisfies Config;

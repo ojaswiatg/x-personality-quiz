@@ -1,21 +1,50 @@
-import { ADMIN_LINK } from "../constants";
+import { map, orderBy } from "lodash-es";
+import { ADMIN_LINK, TPersonality } from "../constants";
+import { useEffect, useState } from "react";
 
 type TFinishProps = {
-    totalPoints: number;
+    totalPoints: { [key in TPersonality]?: number };
     onClickAgain: () => void;
 };
 
 export default function Finish({ totalPoints, onClickAgain }: TFinishProps) {
+    const [arrPoints, setArrPoints] = useState(
+        map(totalPoints, (point, key) => {
+            return {
+                personality: key,
+                point,
+            };
+        }),
+    );
+
+    useEffect(() => {
+        setArrPoints(orderBy(arrPoints, "point", "desc"));
+
+        console.log(arrPoints);
+    }, []);
+
     return (
-        <div className="my-auto min-h-screen min-w-screen flex flex-col items-center pt-32 gap-16">
+        <div className="flex flex-col items-center mt-16 gap-8">
             <div className="flex flex-col items-center gap-4">
-                <progress
-                    className="progress progress-primary w-48"
-                    value={totalPoints}
-                    max="100"
-                ></progress>
-                <p className="prose-xl font-bold whitespace-normal">You are {totalPoints}% Gay</p>
+                <p className="prose-xl font-bold whitespace-normal">
+                    You are a {arrPoints[0].personality} type person!
+                </p>
+
+                <p className="prose-md whitespace-normal text-center px-16">
+                    Here are some of your other dominant personalities in order:
+                </p>
+
+                <ol>
+                    {arrPoints.map((point, index) => {
+                        return index > 0 && index < 4 ? (
+                            <li key={`point-${point.personality}`} className="prose-sm">
+                                {point.personality}
+                            </li>
+                        ) : null;
+                    })}
+                </ol>
             </div>
+
             <div className="flex flex-col gap-4 items-center">
                 <p className="prose-md whitespace-normal">
                     Take the screenshot and post the results

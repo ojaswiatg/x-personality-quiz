@@ -2,19 +2,42 @@
 
 import { useState } from "react";
 import Question from "./components/Question";
-import { QUESTIONS, TOption } from "./constants";
+import { QUESTIONS, TOption, TPersonality } from "./constants";
 import Finish from "./components/Finish";
 import Start from "./components/Start";
+import { reduce } from "lodash-es";
 
 export default function Home() {
     const questions = QUESTIONS;
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1);
-    const [totalPoints, setTotalPoints] = useState(0);
+    const [totalPoints, setTotalPoints] = useState({
+        Rabbit: 0,
+        Monkey: 0,
+        Sloth: 0,
+        Wolf: 0,
+        Elephant: 0,
+        Dolphin: 0,
+        Butterfly: 0,
+    });
 
     const onClickNext = (option: TOption) => {
         if (currentQuestionIndex < questions.length) {
-            setTotalPoints((prev) => prev + option.points);
+            const init: { [key in TPersonality]?: number } = {};
+
+            const thisOptionPoints = reduce(
+                option.personalities,
+                (result, personality) => {
+                    result[personality] = totalPoints[personality] + 1;
+                    return result;
+                },
+                init,
+            );
+
+            setTotalPoints({
+                ...totalPoints,
+                ...thisOptionPoints,
+            });
         }
         setCurrentQuestionIndex((prev) => prev + 1);
     };
