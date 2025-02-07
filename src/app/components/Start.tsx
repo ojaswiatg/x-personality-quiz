@@ -8,7 +8,7 @@ export default function Start({ onClickStart }: TStartProps) {
     return (
         <div className="flex flex-col items-center mt-16 gap-12 px-16">
             <p className="prose-md whitespace-normal text-center">
-                This quiz will determine how much gay you are!
+                This quiz will determine which animal type personality you have!
             </p>
             <button className="btn btn-primary mt-4" onClick={onClickStart}>
                 Start Quiz
